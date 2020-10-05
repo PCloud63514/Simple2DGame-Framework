@@ -6,15 +6,16 @@ import android.graphics.BitmapFactory
 import com.pcloud63514.simple2dgame_framework.core.utils.AnimationController
 import com.pcloud63514.simple2dgame_framework.core.utils.TPJsonParser
 import com.pcloud63514.simple2dgame_framework.core.views.CreatureView
+import com.pcloud63514.simple2dgame_framework.core.views.IGameObjectViewBuilder
+import com.pcloud63514.simple2dgame_framework.core.views.TPView
 
 class GameObjectFactory(private val context: Context) {
     private val mTPJsonParser: TPJsonParser = TPJsonParser(context)
 
-    fun createCreatureViewBuilder(domain: String): CreatureView.CreatureViewBuilder? {
+    fun createGameObjectViewBuilder(domain: String): TPView.TPViewBuilder? {
         val spriteSheetConfig = mTPJsonParser.getSpriteSheetConfig(domain + "/data.json")
-
         spriteSheetConfig?.let {
-            return CreatureView.CreatureViewBuilder(
+            return TPView.TPViewBuilder (
                 animationController = AnimationController(context, spriteSheetConfig.frames),
                 context = context,
                 bitmap = getGameSpriteSheetImage(domain),
