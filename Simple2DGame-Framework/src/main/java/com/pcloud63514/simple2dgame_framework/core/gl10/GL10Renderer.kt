@@ -2,10 +2,10 @@ package com.pcloud63514.simple2dgame_framework.core.gl10
 
 import android.graphics.Bitmap
 import android.opengl.GLSurfaceView
+import com.pcloud63514.simple2dgame_framework.data.AnimationState
 import com.pcloud63514.simple2dgame_framework.data.Frame
 import com.pcloud63514.simple2dgame_framework.data.Meta
-import com.pcloud63514.simple2dgame_framework.data.anim.AnimationState
-import com.pcloud63514.simple2dgame_framework.core.utils.FPSManager
+import com.pcloud63514.simple2dgame_framework.utils.FPSManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.launch

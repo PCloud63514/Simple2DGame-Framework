@@ -1,4 +1,4 @@
-package com.pcloud63514.simple2dgame_framework.core.utils
+package com.pcloud63514.simple2dgame_framework.utils
 
 import android.content.Context
 import com.pcloud63514.simple2dgame_framework.data.Frame
@@ -8,10 +8,7 @@ import com.pcloud63514.simple2dgame_framework.data.SpriteSheetConfig
 import org.json.JSONArray
 import org.json.JSONObject
 
-/**
- * TexturePacker Json Parser
- * **/
-class TPJsonParser(private val context: Context) {
+class TexturePackerJSONParser(private val context: Context) {
 
     fun getSpriteSheetConfig(jsonPath:String):SpriteSheetConfig? {
         if(isJsonExtension(jsonPath)) {
@@ -55,7 +52,7 @@ class TPJsonParser(private val context: Context) {
             sourceSize = getLocation(frameJSONObject.getJSONObject("sourceSize")))
     }
 
-    private fun getMetaInstance(metaJSONObject: JSONObject):Meta {
+    private fun getMetaInstance(metaJSONObject: JSONObject): Meta {
         val sourceSize:Location = getLocation(metaJSONObject.getJSONObject("sourceSize"))
         val size:Location = getLocation(metaJSONObject.getJSONObject("size"))
         return Meta(

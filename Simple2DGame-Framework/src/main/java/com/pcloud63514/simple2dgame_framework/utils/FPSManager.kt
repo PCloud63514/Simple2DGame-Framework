@@ -1,4 +1,4 @@
-package com.pcloud63514.simple2dgame_framework.core.utils
+package com.pcloud63514.simple2dgame_framework.utils
 
 class FPSManager(
     private val thetaFrame:Float = 0.13F

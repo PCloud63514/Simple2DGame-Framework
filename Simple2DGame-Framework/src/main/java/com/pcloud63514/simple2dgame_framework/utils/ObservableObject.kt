@@ -1,4 +1,4 @@
-package com.pcloud63514.simple2dgame_framework.core
+package com.pcloud63514.simple2dgame_framework.utils
 
 import android.content.Context
 import java.beans.PropertyChangeListener
