@@ -1,3 +1,4 @@
 include ':Simple2DGame-Framework'
 include ':app'
 rootProject.name = "LibProject"
+include ':game-stater-ui'
