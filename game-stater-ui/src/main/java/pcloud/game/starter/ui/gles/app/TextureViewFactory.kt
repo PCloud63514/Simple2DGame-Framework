@@ -21,7 +21,10 @@ class TextureViewFactory {
                 textureHeight = textureAtlas.meta.imageSize.h,
                 methods = convertMethods(textureAtlas.frames)
             )
-            return TextureView(context, textureResource)
+            return TextureView(
+                context = context,
+                textureResource = textureResource
+            )
         }
 
         private fun convertMethods(frames: List<Frame>): Map<String, List<MethodInfo>> {
@@ -30,9 +33,9 @@ class TextureViewFactory {
             for (frame: Frame in frames) {
                 // {methodName}/id
                 // {methodName}/{secondName}-id
-                val split = frame.name.split("/")
+                val split:List<String> = frame.name.split("/")
                 val methodName = split[0]
-                val id = split[1].toInt()
+                val id = split[1].split(".")[0].toInt()
                 if (!methodMap.containsKey(methodName)) {
                     methodMap[methodName] = mutableListOf<MethodInfo>()
                 }
