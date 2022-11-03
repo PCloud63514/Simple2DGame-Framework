@@ -22,14 +22,12 @@ class TextureRenderer(private val textureResource: TextureResource):GLSurfaceVie
     }
 
     var preT = System.currentTimeMillis()
-
-
     override fun onDrawFrame(gl: GL10?) {
         val after = System.currentTimeMillis()
 
         textureResource.methods[currentMethodName]?.let {
             textureShape.draw(gl!!, it[currentMethodId])
-            if (30 < after - preT) {
+            if (45 < after - preT) {
                 preT = after
                 currentMethodId = if(currentMethodId + 1 < it.size) currentMethodId + 1 else 0
             }

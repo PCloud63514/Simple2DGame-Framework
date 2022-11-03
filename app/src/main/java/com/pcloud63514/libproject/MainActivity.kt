@@ -1,25 +1,32 @@
 package com.pcloud63514.libproject
 
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Color
 import android.os.Bundle
+import android.view.Gravity
+import android.widget.LinearLayout
+import androidx.appcompat.app.AppCompatActivity
 import com.pcloud63514.simple2dgame_framework.core.GameObjectFactory
 import pcloud.game.starter.ui.gles.app.TextureView
 import pcloud.game.starter.ui.gles.app.TextureViewFactory
-import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-//    private val gameObjectFactory:GameObjectFactory = GameObjectFactory(this)
+    private val gameObjectFactory:GameObjectFactory = GameObjectFactory(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val layout = LinearLayout(this)
+        layout.setBackgroundColor(Color.BLACK)
+        layout.orientation = LinearLayout.VERTICAL
+
 
         val textureView: TextureView = TextureViewFactory.create("Fairy", this)
         textureView.setMethod("idle")
-//        val builder = gameObjectFactory.createCreatureViewBuilder("Hyena")
+        textureView.start()
+
+        val builder = gameObjectFactory.createCreatureViewBuilder("Fairy")
 
         setContentView(textureView)
-        textureView.start()
+//        setContentView(builder!!.build("idle"))
     }
 }

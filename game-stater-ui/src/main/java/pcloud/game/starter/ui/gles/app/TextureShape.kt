@@ -39,8 +39,8 @@ class TextureShape {
     }
 
     fun draw(gl: GL10, methodInfo:MethodInfo) {
-        val translateX = (methodInfo.x - viewPointX) / textureWidth
-        val translateY = (methodInfo.y - viewPointY) / textureHeight
+        val translateX = (methodInfo.x - viewPointX).toInt() / textureWidth
+        val translateY = (methodInfo.y - viewPointY).toInt() / textureHeight
 
         gl.glTexCoordPointer(2, GL10.GL_FLOAT, 0, getLookTextureBuffer(methodInfo))
         gl.glDrawElements(GL10.GL_TRIANGLES, DRAW_ORDER.size, GL10.GL_UNSIGNED_SHORT, DRAW_ORDER_BUFFER)
