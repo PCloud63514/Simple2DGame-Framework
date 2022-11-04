@@ -17,4 +17,8 @@ class TextureView(context: Context, textureResource: TextureResource):GLSurfaceV
     fun setMethod(methodName:String) {
         textureRenderer.setMethod(methodName)
     }
+
+    fun getMethodNames():List<String> {
+        return textureRenderer.getMethodNames()
+    }
 }

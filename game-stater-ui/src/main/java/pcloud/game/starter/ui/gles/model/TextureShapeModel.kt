@@ -6,10 +6,10 @@ import java.nio.FloatBuffer
 import java.nio.ShortBuffer
 
 val VERTEX_COORDS: FloatArray = floatArrayOf(
-    -1f, 1f, 0.0f,
-    -1f, -1f, 0.0f,
-    1f, -1f, 0.0f,
-    1f, 1f, 0.0f
+    -0.5f,  0.5f, 0.0f,
+    -0.5f, -0.5f, 0.0f,
+     0.5f, -0.5f, 0.0f,
+     0.5f,  0.5f, 0.0f
 )
 
 val DRAW_ORDER: ShortArray = shortArrayOf(

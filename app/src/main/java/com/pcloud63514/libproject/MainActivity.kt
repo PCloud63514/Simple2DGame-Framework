@@ -2,12 +2,14 @@ package com.pcloud63514.libproject
 
 import android.graphics.Color
 import android.os.Bundle
-import android.view.Gravity
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.pcloud63514.simple2dgame_framework.core.GameObjectFactory
 import pcloud.game.starter.ui.gles.app.TextureView
 import pcloud.game.starter.ui.gles.app.TextureViewFactory
+import java.util.*
+import kotlin.concurrent.thread
+import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,14 +21,26 @@ class MainActivity : AppCompatActivity() {
         layout.setBackgroundColor(Color.BLACK)
         layout.orientation = LinearLayout.VERTICAL
 
-
         val textureView: TextureView = TextureViewFactory.create("Fairy", this)
-        textureView.setMethod("idle")
+        textureView.setMethod("angry")
         textureView.start()
 
-        val builder = gameObjectFactory.createCreatureViewBuilder("Fairy")
 
+        val size = textureView.getMethodNames().size
+
+        val timerTask: TimerTask = object : TimerTask() {
+            override fun run() {
+                val nextId = Random.nextInt(size)
+                textureView.setMethod(textureView.getMethodNames()[nextId])
+            }
+        }
+
+//        val builder = gameObjectFactory.createCreatureViewBuilder("Fairy")
         setContentView(textureView)
-//        setContentView(builder!!.build("idle"))
+//        setContentView(builder!!.build("walking"))
+
+        val timer = Timer("MyTimer");//create a new Timer
+
+        timer.scheduleAtFixedRate(timerTask, 10, 3000)
     }
 }

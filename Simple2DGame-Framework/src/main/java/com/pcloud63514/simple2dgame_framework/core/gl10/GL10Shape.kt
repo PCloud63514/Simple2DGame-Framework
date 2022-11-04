@@ -92,7 +92,6 @@ class GL10Shape(meta: Meta) {
         gl.glDisable(GL10.GL_TEXTURE_2D)
         gl.glDisableClientState(GL10.GL_VERTEX_ARRAY)
         gl.glDisableClientState(GL10.GL_TEXTURE_COORD_ARRAY)
-
     }
 
     fun destroy() {

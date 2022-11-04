@@ -39,4 +39,8 @@ class TextureRenderer(private val textureResource: TextureResource):GLSurfaceVie
         currentMethodId = 0
         currentMethodName = methodName
     }
+
+    fun getMethodNames():List<String> {
+        return textureResource.methods.keys.toList();
+    }
 }
