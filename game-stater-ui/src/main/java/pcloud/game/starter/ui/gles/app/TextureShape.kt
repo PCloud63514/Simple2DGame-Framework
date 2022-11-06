@@ -40,7 +40,6 @@ class TextureShape {
         gl.glVertexPointer(3, GL10.GL_FLOAT, 0, VERTEX_BUFFER)
         gl.glBindTexture(GL10.GL_TEXTURE_2D, textureHandle)
 
-
 //        gl.glScalef(0.12f, 0.05f, 0f)
     }
 
@@ -49,10 +48,10 @@ class TextureShape {
         val translateY = (methodInfo.y - viewPointY).toInt() / textureHeight
 
         gl.glDrawElements(GL_TRIANGLES, DRAW_ORDER.size, GL10.GL_UNSIGNED_SHORT, DRAW_ORDER_BUFFER)
-        /**렌더링할 때 사용할 텍스처 좌표배열의 위치와 데이터를 지정하는 함수*/
         gl.glTexCoordPointer(2, GL10.GL_FLOAT, 0, getLookTextureBuffer(methodInfo))
 
 //        GLU.gluLookAt(gl, 00f, 0f, 0f, 10f, 10f, 0f, 0f, 0f, 0f)
+
 
         /**정점 이동*/
         gl.glTranslatef(translateX, translateY, 0f)
@@ -70,9 +69,9 @@ class TextureShape {
         gl.glDisableClientState(GL10.GL_TEXTURE_COORD_ARRAY)
     }
 
-    private fun getLookTextureBuffer(methodInfo:MethodInfo?): FloatBuffer {
-        val w = 1f
-        val h = 1f
+    private fun getLookTextureBuffer(methodInfo:MethodInfo): FloatBuffer {
+        val w = 1f//methodInfo.w / textureWidth
+        val h = 1f//methodInfo.h / textureHeight
 
         val lookTexture = floatArrayOf(
             0.0f, 0.0f,

@@ -8,7 +8,6 @@ import com.pcloud63514.simple2dgame_framework.core.GameObjectFactory
 import pcloud.game.starter.ui.gles.app.TextureView
 import pcloud.game.starter.ui.gles.app.TextureViewFactory
 import java.util.*
-import kotlin.concurrent.thread
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
@@ -22,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         layout.orientation = LinearLayout.VERTICAL
 
         val textureView: TextureView = TextureViewFactory.create("Fairy", this)
-        textureView.setMethod("angry")
+        textureView.setMethod("vertigo")
         textureView.start()
 
 
@@ -41,6 +40,6 @@ class MainActivity : AppCompatActivity() {
 
         val timer = Timer("MyTimer");//create a new Timer
 
-        timer.scheduleAtFixedRate(timerTask, 10, 3000)
+//        timer.scheduleAtFixedRate(timerTask, 10, 3000)
     }
 }
