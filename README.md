@@ -17,7 +17,7 @@ TexturePacker 를 사용해 생긴 Image Atras 와 정보를 전달해 손쉽게
 
 - 디렉토리 구조 상 2d 이미지와 json은 asset 의 한 폴더 내에 함께 존재해야한다.  ex) assets/Demon/data.png   ...data.json
 - TexturePacker 를 이용해 이미지를 생성할 때 grid 구조를 사용해야한다.
-- json file 의 meta 정보에 spriteSourceSIze 를 포함해야한다.
+- ~~json file 의 meta 정보에 spriteSourceSIze 를 포함해야한다.~~
 
 
 
